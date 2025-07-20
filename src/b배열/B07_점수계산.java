@@ -15,8 +15,31 @@ public class B07_점수계산 {
     // 10
     // 1 0 1 1 1 0 0 1 1 0
     // 1 0 1 2 3 0 0 1 2 0 = 10
+    public static void main(String[] a) {
+        Scanner in = new Scanner(System.in);
+        int input1 = in.nextInt();
+        int[] input2 = new int[input1];
+        for (int i = 0; i < input1; i++) {
+            input2[i] = in.nextInt();
+        }
+
+        System.out.println(solution(input2));
+    }
 
     public static int solution(int[] input1) {
+        int answer = 0, cnt = 0;
+        for (int i = 0; i < input1.length; i++) {
+            if (input1[i] == 1) {
+                cnt++;
+                answer += cnt;
+            } else {
+                cnt = 0;
+            }
+        }
+        return answer;
+    }
+
+    public static int solution1(int[] input1) {
         int answer = 0;
         int[] arr = new int[input1.length];
         arr[0] = input1[0] == 1 ? 1 : 0;
@@ -29,16 +52,5 @@ public class B07_점수계산 {
             answer += arr[i];
         }
         return answer;
-    }
-
-    public static void main(String[] a) {
-        Scanner in = new Scanner(System.in);
-        int input1 = in.nextInt();
-        int[] input2 = new int[input1];
-        for (int i = 0; i < input1; i++) {
-            input2[i] = in.nextInt();
-        }
-
-        System.out.println(solution(input2));
     }
 }
