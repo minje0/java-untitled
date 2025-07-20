@@ -27,14 +27,40 @@ public class B06_뒤집은소수 {
         for (int i : solution(input2)) {
             System.out.print(i + " ");
         }
-//        in.nextLine();
-//        String arr = in.nextLine();
-//        for (int i : solution(input1, arr)) {
-//            System.out.print(i + " ");
-//        }
+    }
+
+    public static boolean isPrime(int num) {
+        if (num == 1) {
+            return false;
+        }
+
+        for (int i = 2; i < num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static ArrayList<Integer> solution(int[] input1) {
+        ArrayList<Integer> answer = new ArrayList<>();
+
+        for (int i = 0; i < input1.length; i++) {
+            int reverse = 0;
+            while (input1[i] > 0) {
+                int tmp = input1[i] % 10;
+                reverse = reverse * 10 + tmp;
+                input1[i] /= 10;
+            }
+
+            if (isPrime(reverse)) {
+                answer.add(reverse);
+            }
+        }
+        return answer;
+    }
+
+    public static ArrayList<Integer> solution1(int[] input1) {
         ArrayList<Integer> answer = new ArrayList<>();
 
         for (int i = 0; i < input1.length; i++) {
