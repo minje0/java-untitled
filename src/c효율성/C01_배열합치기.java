@@ -37,15 +37,21 @@ public class C01_배열합치기 {
             else answer[len++] = arr2[p2++];
         }
 
-        if (p1 < n) {
-            for (int i = p1; i < n; i++) {
-                answer[len++] = arr1[i];
-            }
-        } else {
-            for (int i = p2; i < m; i++) {
-                answer[len++] = arr2[i];
-            }
+        while (p1 < n) {
+            answer[len++] = arr1[p1++];
         }
+        while (p2 < m) {
+            answer[len++] = arr2[p2++];
+        }
+//        if (p1 < n) {
+//            for (int i = p1; i < n; i++) {
+//                answer[len++] = arr1[i];
+//            }
+//        } else {
+//            for (int i = p2; i < m; i++) {
+//                answer[len++] = arr2[i];
+//            }
+//        }
         return answer;
     }
 
