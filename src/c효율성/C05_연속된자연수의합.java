@@ -38,12 +38,28 @@ public class C05_연속된자연수의합 {
         return answer;
     }
 
+    public int solution1(int n) {
+        int answer = 0, cnt = 1;
+        n -= cnt;
+
+        while (n > 0) {
+            cnt++;
+            n -= cnt;
+            if (n % cnt == 0) {
+                System.out.println(n + " " + cnt);
+                answer++;
+            }
+        }
+
+        return answer;
+    }
+
     public static void main(String[] a) {
         C05_연속된자연수의합 T = new C05_연속된자연수의합();
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
 
-        System.out.print(T.solution(n));
+        System.out.print(T.solution1(n));
     }
 }
