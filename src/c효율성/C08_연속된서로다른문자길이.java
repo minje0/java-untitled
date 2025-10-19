@@ -5,9 +5,8 @@ import java.util.Scanner;
 
 public class C08_연속된서로다른문자길이 {
     //영문 소문자로 이루어진 문자열 S가 주어집니다.
-    //최대 K개의 서로 다른 문자를 포함하는 가장 긴 부분 문자열의 길이를 구하세요.
+    //서로 다른 문자를 포함하는 가장 긴 부분 문자열의 길이를 구하세요.
     //abcba
-    //2
     //3
     public int solution(String s) {
         int answer = 0;
