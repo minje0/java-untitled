@@ -27,7 +27,7 @@ public class C05_연속된자연수의합 {
                 answer++;
                 sum -= lt++;
             }
-            while (sum >= n) {
+            while (sum > n) {
                 sum -= lt++;
                 if (sum == n) {
                     answer++;
